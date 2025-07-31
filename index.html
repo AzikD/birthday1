@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>С 17-летием Лина!</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+            touch-action: manipulation;
+            background-color: #ffebee;
+        }
+        body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+    touch-action: manipulation;
+    background-image: url('https://i.postimg.cc/MHmNQLHJ/image.jpg'); /* Ваше фото */
+    background-size: cover;              /* Растягиваем на весь экран */
+    background-position: center;         /* Центрируем */
+    background-attachment: fixed;        /* Фиксируем фон */
+}
+
+        .card {
+            position: relative;
+            width: 90%;
+            max-width: 500px;
+            height: 70vh;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            box-sizing: border-box;
+            text-align: center;
+            cursor: pointer;
+            overflow: hidden;
+        }
+
+        .card h1 {
+            color: #d32f2f;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+            z-index: 2;
+        }
+
+        .card p {
+            color: #5d4037;
+            font-size: 1.2rem;
+            line-height: 1.5;
+            margin-bottom: 30px;
+            z-index: 2;
+        }
+
+        /* Стили для цифры 17 */
+        .number-17 {
+            position: absolute;
+            bottom: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 4rem;
+            font-weight: bold;
+            color: #d32f2f;
+            text-shadow: 
+                2px 2px 0 #fff,
+                4px 4px 0 rgba(0,0,0,0.1);
+            z-index: 10;
+            animation: pulse 2s infinite alternate;
+        }
+
+        @keyframes pulse {
+            0% { transform: translateX(-50%) scale(1); }
+            100% { transform: translateX(-50%) scale(1.1); }
+        }
+
+        /* Стили для торта с фруктами */
+        .cake {
+            width: 200px;
+            height: 140px;
+            position: relative;
+            margin-bottom: 50px;
+            z-index: 2;
+        }
+
+        .plate {
+            width: 220px;
+            height: 25px;
+            background: #e0e0e0;
+            border-radius: 50%;
+            position: absolute;
+            bottom: -15px;
+            left: -10px;
+            z-index: 1;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        }
+
+        .layer {
+            position: absolute;
+            width: 190px;
+            height: 60px;
+            background: #f8bbd0;
+            border-radius: 15px;
+            bottom: 10px;
+            left: 5px;
+            z-index: 2;
+        }
+
+        .layer.top {
+            height: 50px;
+            background: #fce4ec;
+            bottom: 70px;
+            border-radius: 12px 12px 0 0;
+        }
+
+        /* Фруктовые украшения */
+        .strawberry {
+            position: absolute;
+            width: 22px;
+            height: 22px;
+            background: #ff5252;
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            z-index: 3;
+            box-shadow: 2px 2px 3px rgba(0,0,0,0.2);
+        }
+
+        .strawberry:before {
+            content: "";
+            position: absolute;
+            top: -5px;
+            left: 8px;
+            width: 5px;
+            height: 10px;
+            background: #4caf50;
+            border-radius: 3px;
+            transform: rotate(-20deg);
+        }
+
+        .cherry {
+            position: absolute;
+            width: 17px;
+            height: 17px;
+            background: #e91e63;
+            border-radius: 50%;
+            z-index: 3;
+            box-shadow: 2px 2px 3px rgba(0,0,0,0.2);
+        }
+
+        .cherry:before {
+            content: "";
+            position: absolute;
+            top: -8px;
+            left: 5px;
+            width: 2px;
+            height: 10px;
+            background: #795548;
+            transform: rotate(-15deg);
+        }
+
+        .nectarine {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: #ffab40;
+            border-radius: 50%;
+            z-index: 3;
+            box-shadow: 2px 2px 3px rgba(0,0,0,0.2);
+        }
+
+        .nectarine:before {
+            content: "";
+            position: absolute;
+            top: 3px;
+            left: 3px;
+            width: 14px;
+            height: 14px;
+            background: rgba(255,255,255,0.3);
+            border-radius: 50%;
+        }
+
+        .orange {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: #ff9800;
+            border-radius: 50%;
+            z-index: 3;
+            box-shadow: 2px 2px 3px rgba(0,0,0,0.2);
+        }
+
+        .orange:before {
+            content: "";
+            position: absolute;
+            top: 3px;
+            left: 3px;
+            width: 14px;
+            height: 14px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+        }
+
+        /* Мишура */
+        .tinsel {
+            position: absolute;
+            height: 2px;
+            background: linear-gradient(90deg, 
+                #ffeb3b, #ff9800, #e91e63, #9c27b0, #3f51b5, #4caf50, #ffeb3b);
+            transform-origin: left center;
+            z-index: 1;
+            animation: tinsel-shine 3s infinite;
+        }
+
+        @keyframes tinsel-shine {
+            0% { opacity: 0.7; }
+            50% { opacity: 1; }
+            100% { opacity: 0.7; }
+        }
+
+        /* Цветы */
+        .flower {
+            position: absolute;
+            font-size: 0;
+            z-index: 4;
+            bottom: -50px;
+            animation: flower-float 6s ease-in forwards;
+        }
+
+        .lilac { color: #ba68c8; }
+        .chrysanthemum { color: #ffb74d; }
+        .lavender { color: #9575cd; }
+        .lily { color: #f06292; }
+
+        @keyframes flower-float {
+            0% { 
+                transform: translateY(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% { 
+                transform: translateY(-100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Остальные стили */
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #f44336;
+            opacity: 0;
+        }
+
+        .heart {
+            position: absolute;
+            font-size: 20px;
+            color: #ff5252;
+            animation: float 4s ease-in-out infinite;
+            opacity: 0;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+        }
+
+        .open-btn {
+            background-color: #d32f2f;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 2;
+        }
+
+        .open-btn:hover {
+            background-color: #b71c1c;
+            transform: translateY(-2px);
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .balloon {
+            position: absolute;
+            width: 40px;
+            height: 50px;
+            background: #e91e63;
+            border-radius: 50%;
+            animation: balloon-float 8s ease-in-out infinite;
+            opacity: 0;
+        }
+
+        .balloon:before {
+            content: "";
+            position: absolute;
+            width: 2px;
+            height: 40px;
+            background: #bdbdbd;
+            bottom: -40px;
+            left: 19px;
+        }
+
+        @keyframes balloon-float {
+            0% { 
+                transform: translateY(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% { 
+                transform: translateY(-100vh) rotate(20deg);
+                opacity: 0;
+            }
+        }
+        /* Стили для свечей */
+.candle {
+    position: absolute;
+    width: 4px;
+    height: 30px;
+    background: linear-gradient(to bottom, #fff, #ffeb3b, #ffc107);
+    z-index: 4;
+}
+
+.flame {
+    position: absolute;
+    width: 8px;
+    height: 12px;
+    background: #ff9800;
+    border-radius: 50% 50% 20% 20%;
+    animation: flicker 0.5s infinite alternate;
+    z-index: 5;
+}
+
+@keyframes flicker {
+    0% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(1.1); opacity: 0.8; }
+}
+    </style>
+</head>
+<body>
+    <div class="card" id="card">
+        
+        
+        <!-- Торт с фруктами -->
+        <div class="cake">
+            <div class="plate"></div>
+            <div class="layer"></div>
+            <div class="layer top"></div>
+            
+            <!-- Фрукты -->
+            <div class="strawberry" style="top: 25px; left: 30px;"></div>
+            <div class="strawberry" style="top: 30px; right: 30px;"></div>
+            <div class="cherry" style="top: 20px; left: 70px;"></div>
+            <div class="cherry" style="top: 25px; right: 70px;"></div>
+            <div class="nectarine" style="top: 35px; left: 100px;"></div>
+            <div class="orange" style="top: 30px; right: 100px;"></div>
+            <div class="orange" style="top: 45px; left: 50px;"></div>
+            <div class="nectarine" style="top: 40px; right: 50px;"></div>
+            
+            <div class="number-17">17</div>
+        </div>
+        
+        <h1 id="title">С 17-летием Лина!</h1>
+        <p id="message">Нажми сюда!</p>
+        <button class="open-btn" id="openBtn">Открыть</button>
+    </div>
+
+    <script>
+        // Типы цветов
+        const flowerTypes = [
+            {emoji: '🌸', class: 'lilac'},
+            {emoji: '🌼', class: 'chrysanthemum'},
+            {emoji: '🌿', class: 'lavender'},
+            {emoji: '🌺', class: 'lily'}
+        ];
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const card = document.getElementById('card');
+            const openBtn = document.getElementById('openBtn');
+            const title = document.getElementById('title');
+            const message = document.getElementById('message');
+            
+            // Функция для создания конфетти
+            function createConfetti() {
+                for (let i = 0; i < 100; i++) {
+                    const confetti = document.createElement('div');
+                    confetti.className = 'confetti';
+                    confetti.style.left = Math.random() * 100 + '%';
+                    confetti.style.top = Math.random() * 100 + '%';
+                    confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+                    confetti.style.width = Math.random() * 10 + 5 + 'px';
+                    confetti.style.height = Math.random() * 10 + 5 + 'px';
+                    confetti.style.borderRadius = Math.random() > 0.5 ? '50%' : '0';
+                    confetti.style.transform = `rotate(${Math.random() * 360}deg)`;
+                    confetti.style.animation = `float ${Math.random() * 3 + 2}s ease-in forwards`;
+                    card.appendChild(confetti);
+                    
+                    setTimeout(() => {
+                        confetti.style.opacity = '1';
+                    }, 100);
+                }
+            }
+            
+            // Функция для создания сердечек
+            function createHearts() {
+                for (let i = 0; i < 20; i++) {
+                    const heart = document.createElement('div');
+                    heart.className = 'heart';
+                    heart.innerHTML = '❤';
+                    heart.style.left = Math.random() * 100 + '%';
+                    heart.style.bottom = '-20px';
+                    heart.style.animationDelay = Math.random() * 2 + 's';
+                    heart.style.fontSize = Math.random() * 20 + 10 + 'px';
+                    card.appendChild(heart);
+                    
+                    setTimeout(() => {
+                        heart.style.opacity = '1';
+                    }, i * 100);
+                }
+            }
+            
+            // Функция для создания шариков
+            function createBalloons() {
+                for (let i = 0; i < 8; i++) {
+                    const balloon = document.createElement('div');
+                    balloon.className = 'balloon';
+                    balloon.style.left = Math.random() * 80 + 10 + '%';
+                    balloon.style.bottom = '-50px';
+                    balloon.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 70%)`;
+                    balloon.style.animationDelay = Math.random() * 3 + 's';
+                    balloon.style.width = Math.random() * 30 + 30 + 'px';
+                    balloon.style.height = Math.random() * 40 + 40 + 'px';
+                    card.appendChild(balloon);
+                    
+                    setTimeout(() => {
+                        balloon.style.opacity = '0.7';
+                    }, i * 300);
+                }
+            }
+            
+            // Функция для создания цветов
+            function createFlowers() {
+                for (let i = 0; i < 12; i++) {
+                    const flower = document.createElement('div');
+                    const type = flowerTypes[Math.floor(Math.random() * flowerTypes.length)];
+                    
+                    flower.className = `flower ${type.class}`;
+                    flower.innerHTML = type.emoji;
+                    flower.style.left = Math.random() * 80 + 10 + '%';
+                    flower.style.fontSize = (Math.random() * 15 + 15) + 'px';
+                    flower.style.animationDelay = Math.random() * 3 + 's';
+                    
+                    card.appendChild(flower);
+                    
+                    setTimeout(() => {
+                        flower.style.opacity = '1';
+                    }, i * 200);
+                }
+            }
+            
+            // Обработчик клика по кнопке
+            openBtn.addEventListener('click', function() {
+                title.textContent = 'С 17-летием Лина!';
+                message.textContent = 'Поздравляю тебя с днём рождения, дорогая Лина, пусть твоя жизнь будет лёгкой как облачко и счастливой всегда всегда! Запомни, что ты всегда ценна, нужна и любима, покрайней мере мной. Я тебя неброшу и никем не заменю, только будь счастлива и меньше волнуйся, с твоим днём, Ведьмочка!';
+                
+                openBtn.classList.add('hidden');
+                createConfetti();
+                createHearts();
+                createBalloons();
+                createFlowers();
+                
+                card.addEventListener('click', function() {
+                    createHearts();
+                });
+            });
+            
+            // Для мобильных устройств
+            card.addEventListener('touchend', function(e) {
+                if (!openBtn.classList.contains('hidden')) {
+                    openBtn.click();
+                } else {
+                    createHearts();
+                }
+                e.preventDefault();
+            });
+        });
+    </script>
+</body>
+</html>
